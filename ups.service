@@ -1,0 +1,8 @@
+[Unit]
+Description=Allows the Raspberry Pi to communicate with the UPS HAT
+
+[Service]
+ExecStart=/usr/bin/ups
+
+[Install]
+WantedBy=multi-user.target
