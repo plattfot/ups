@@ -1,0 +1,13 @@
+[Unit]
+Description=Allows the Raspberry Pi to communicate with the UPS HAT
+
+[Install]
+Alias=ups powerline
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/ups
+ExecStop=/usr/bin/kill -s QUIT ${MAINPID}
+
+[Install]
+WantedBy=multi-user.target
